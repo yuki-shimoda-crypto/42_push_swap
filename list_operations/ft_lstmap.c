@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:54 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 17:43:14 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/15 22:12:37by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
+t_stack	*ft_lstmap(t_stack *lst, int (*f)(int), void (*del)(int))
 {
 	t_stack	*tmp;
 	t_stack	*newlist;

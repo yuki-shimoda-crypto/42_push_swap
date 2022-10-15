@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:30 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 16:03:16 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/15 22:11:18 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstdelone(t_stack *lst, void (*del)(void *))
+void	ft_lstdelone(t_stack *lst, void (*del)(int))
 {
 	if (!lst || !del)
 		return ;

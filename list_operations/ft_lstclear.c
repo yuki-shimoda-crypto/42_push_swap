@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:20 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 16:03:16 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/15 22:11:28 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstclear(t_stack **lst, void (*del)(void *))
+void	ft_lstclear(t_stack **lst, void (*del)(int))
 {
 	t_stack	*tmp;
 

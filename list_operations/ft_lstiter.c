@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:37 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 16:03:16 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/15 22:11:54 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstiter(t_stack *lst, void (*f)(void *))
+void	ft_lstiter(t_stack *lst, void (*f)(int))
 {
 	if (!lst || !f)
 		return ;
