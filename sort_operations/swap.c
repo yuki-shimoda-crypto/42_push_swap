@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:32:02 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 01:50:42 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 03:22:10 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,9 @@ void	sb(t_stack **lst)
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **sa, t_stack **sb)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(sa);
-	swap(sb);
+	swap(stack_a);
+	swap(stack_b);
 	write(1, "ss\n", 3);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	/* code */
-	return (0);
 }

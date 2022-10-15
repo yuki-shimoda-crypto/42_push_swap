@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:31:25 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 01:49:35 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:52:36 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push(t_stack **send, t_stack **receive)
+static void	push(t_stack **send, t_stack **receive)
 {
 	t_stack	*tmp_send;
 
@@ -36,12 +36,4 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
 	write(3, "pa\n", 3);
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	/* code */
-	return (0);
 }
