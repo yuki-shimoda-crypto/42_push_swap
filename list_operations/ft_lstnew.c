@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:42:00 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 16:07:46 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:11:19 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_lstnew(void *num)
+t_stack	*ft_lstnew(int num)
 {
 	t_stack	*new;
 
@@ -20,7 +20,20 @@ t_stack	*ft_lstnew(void *num)
 	if (!new)
 		return (NULL);
 	new->num = num;
+	new->index = -1;
 	new->next = NULL;
 	new->previous = NULL;
 	return (new);
 }
+
+// #include <stdio.h>
+// #include <limits.h>
+// #include <stdint.h>
+// int main(void)
+// {
+// 	t_stack	*ptr;
+
+// 	ptr = ft_lstnew(1);
+// 	printf("%d\n", ptr->num);
+// 	return 0;
+// }
