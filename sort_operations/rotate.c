@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:32:07 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 03:22:52 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 03:26:25 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	rotate(t_stack **lst)
 {
 	t_stack	*tmp;
 	
-	if (!lst || !*lst)
+	if (!lst || !*lst || !((*lst)->next))
 		return ;
 	tmp = ft_lstlast(*lst);
 	tmp->next = *lst;
@@ -39,7 +39,7 @@ void	rb(t_stack **lst)
 	write(1, "rb\n", 3);
 }
 
-void	ra(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
