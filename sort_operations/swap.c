@@ -6,11 +6,11 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:32:02 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/15 21:56:17 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:50:42 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	swap(t_stack **lst)
 {
@@ -25,6 +25,7 @@ static void	swap(t_stack **lst)
 	first->next = second->next;
 	second->previous = NULL;
 	second->next = first;
+	*lst = second;
 }
 
 void	sa(t_stack **lst)
@@ -44,4 +45,12 @@ void	ss(t_stack **sa, t_stack **sb)
 	swap(sa);
 	swap(sb);
 	write(1, "ss\n", 3);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+	/* code */
+	return (0);
 }
