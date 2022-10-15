@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:32:02 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 03:22:10 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 07:46:15 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	swap(t_stack **lst)
 		return ;
 	first = *lst;
 	second = (*lst)-> next;
+	if (second->next)
+		second->next->previous = first;
 	first->previous = second;
 	first->next = second->next;
 	second->previous = NULL;

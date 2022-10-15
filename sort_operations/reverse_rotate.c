@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:31:53 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 03:58:45 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 07:23:26 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static void	reverse_rotate(t_stack **lst)
 void	rra(t_stack **lst)
 {
 	reverse_rotate(lst);
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **lst)
 {
 	reverse_rotate(lst);
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	write(1, "rrr\n", 3);
+	write(1, "rrr\n", 4);
 }

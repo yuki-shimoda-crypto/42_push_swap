@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:31:25 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 01:52:36 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 07:23:00 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ static void	push(t_stack **send, t_stack **receive)
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	push(stack_a, stack_b);
-	write(3, "pa\n", 3);
+	push(stack_b, stack_a);
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	push(stack_b, stack_a);
-	write(3, "pa\n", 3);
+	push(stack_a, stack_b);
+	write(1, "pb\n", 3);
 }
