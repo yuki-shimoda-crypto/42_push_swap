@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:31:25 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 13:25:24 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:31:54 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,21 @@ int main(void)
 	stack_b = ft_lstnew(1);
 	stack_a = ft_lstfirst(stack_a);
 	stack_b = ft_lstfirst(stack_b);
-	// ft_lstadd_back(&stack_a, ft_lstnew(2));
-	// ft_lstadd_back(&stack_b, ft_lstnew(3));
-	// ft_lstadd_back(&stack_a, ft_lstnew(4));
-	// ft_lstadd_back(&stack_b, ft_lstnew(5));
-	// sa(&stack_a);
-	// sb(&stack_b);
-	// ss(&stack_a, &stack_b);
+	ft_lstadd_back(&stack_a, ft_lstnew(2));
+	ft_lstadd_back(&stack_b, ft_lstnew(3));
+	ft_lstadd_back(&stack_a, ft_lstnew(4));
+	ft_lstadd_back(&stack_b, ft_lstnew(5));
+	sa(&stack_a);
+	sb(&stack_b);
+	ss(&stack_a, &stack_b);
 	pa(&stack_a, &stack_b);
-	// pb(&stack_a, &stack_b);
-	// ra(&stack_a);
-	// rb(&stack_b);
-	// rr(&stack_a, &stack_b);
-	// rra(&stack_a);
-	// rrb(&stack_b);
-	// rrr(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	ra(&stack_a);
+	rb(&stack_b);
+	rr(&stack_a, &stack_b);
+	rra(&stack_a);
+	rrb(&stack_b);
+	rrr(&stack_a, &stack_b);
 	while (1)
 	{
 		if (!stack_a)
@@ -80,7 +80,6 @@ int main(void)
 			break ;
 		stack_a = stack_a->next;
 	}
-
 	while (1)
 	{
 		if (!stack_b)
@@ -95,6 +94,5 @@ int main(void)
 			break ;
 		stack_b = stack_b->next;
 	}
-	
 	return (0);
 }
