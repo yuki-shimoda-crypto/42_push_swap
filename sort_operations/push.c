@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:31:25 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 07:23:00 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:27:25 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,24 @@ static void	push(t_stack **send, t_stack **receive)
 	if (!send || !receive || !*send)
 		return ;
 	tmp_send = *send;
-	*send = (*send)->next;
-	(*send)->previous = NULL;
-	(*receive)->previous = tmp_send;
-	tmp_send->next = *receive;
-	*receive = tmp_send;
+	if (!(*send)->next)
+		*send = NULL;
+	else
+	{
+		*send = (*send)->next;
+		(*send)->previous = NULL;
+	}
+	if (*receive)
+	{
+		(*receive)->previous = tmp_send;
+		tmp_send->next = *receive;
+		*receive = tmp_send;
+	}
+	else
+	{
+		*receive = tmp_send;
+		(*receive)->next = NULL;
+	}
 }
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
