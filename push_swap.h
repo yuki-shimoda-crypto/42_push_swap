@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 05:51:36 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/19 16:30:25 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <unistd.h>
+#include "libft/libft.h"
 
 typedef	struct s_stack
 {
