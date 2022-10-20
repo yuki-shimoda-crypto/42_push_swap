@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:16:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/19 23:59:25 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:42:37 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ static int		check_over_int(long num)
 	return (0);
 }
 
-static void	scan_num(const char **num)
+static void	scan_num(const char **num, int argc)
 {
 	size_t	i;
 
-	i = 0;
+	i = 1;
+	if (argc == 2)
+		i = 0;
 	while (num[i])
 	{
 		if (check_over_int(ft_atol(num[i])) || check_isnum(num[i]))
@@ -50,37 +52,43 @@ static void	scan_num(const char **num)
 	}
 }
 
-char	**check_args(int argc, const char **argv)
+const char	**check_args(int argc, const char **argv)
 {
-	char	**num;
+	const char	**num;
 
 	if (argc < 2)
 		exit (1);
 	else if (argc == 2)
 	{
-		num = ft_split(argv[1], ' ');
+		num = (const char **)ft_split(argv[1], ' ');
 		if (!num)
 			malloc_error(NULL);
-		scan_num((const char **)num);
+		scan_num(num, argc);
 		return (num);
 	}
-	scan_num(argv);
-	return ((char **)argv);
+	scan_num(argv, argc);
+	return (argv);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(int argc, const char *argv[])
-{
-	char	**num;
-	int		i;
+// int main(int argc, const char *argv[])
+// {
+// 	const char	**num;
+// 	int		i;
 
-	num = check_args(argc, argv);
-	i = 0;
-	while (num[i])
-	{
-		printf("%s\n", num[i]);
-		i++;
-	}
-	return 0;
-}
+// 	num = check_args(argc, argv);
+// 	i = 0;
+// 	while (num[i])
+// 	{
+// 		printf("%s\n", num[i]);
+// 		i++;
+// 	}
+// 	// i = 0;
+// 	// while (argv[i])
+// 	// {
+// 	// 	printf("%s\n", argv[i]);
+// 	// 	i++;
+// 	// }
+// 	return 0;
+// }

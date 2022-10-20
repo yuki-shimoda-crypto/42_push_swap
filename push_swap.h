@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/19 23:43:58 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:50:21 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <unistd.h>
 #include "libft/libft.h"
 #include "printf/ft_printf.h"
+
+#include <stdio.h>
 
 typedef	struct s_stack
 {
@@ -53,5 +55,6 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 void	error_argv(void);
 void	malloc_error(t_stack **stack);
+const char	**check_args(int argc, const char **argv);
 
 #endif
