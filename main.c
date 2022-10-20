@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 15:14:37 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/19 22:46:14by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/19 16:55:05 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/19 16:55:43by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	char	**num;
-	
-	stack_a = NULL;
-	stack_b = NULL;
-	num = check_args(argc, argv);
-	if (!num)
-		return (1);
-	inpu
+	int	i;
+
+	i = 0;
+	while (1)
+	{
+		printf("%s\n", argv[i]);
+		i++;
+		if (!argv[i])
+			break ;
+	}
 	return (0);
 }

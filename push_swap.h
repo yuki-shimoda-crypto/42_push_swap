@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/19 18:28:44 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:43:58 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,9 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **lst);
 void	rrb(t_stack **lst);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+
+
+void	error_argv(void);
+void	malloc_error(t_stack **stack);
 
 #endif
