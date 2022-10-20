@@ -6,11 +6,21 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:46:49 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 20:56:32 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/20 00:02:13 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 
 ssize_t	ft_put_str(char *str)
 {

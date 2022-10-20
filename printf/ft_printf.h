@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:07:37 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 20:56:56 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/20 00:02:19 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int			ft_printf(const char *format, ...);
 ssize_t		ft_put_char(char c);
 ssize_t		ft_put_str(char *str);
 ssize_t		ft_put_ptr(uintptr_t num);
-size_t	ft_strlen(const char *s);
 
 #endif

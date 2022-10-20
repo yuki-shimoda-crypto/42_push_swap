@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:42:08 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/11 21:00:48 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/20 00:01:57 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+static size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
