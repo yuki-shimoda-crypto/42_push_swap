@@ -36,6 +36,8 @@ static void	input_argv_to_stack(int argc, const char **num, t_stack **stack)
 	while (num[i])
 	{
 		tmp = ft_lstnew(ft_atoi(num[i]));
+		if (!tmp && argc == 2)
+			free_num(num);
 		if (!tmp)
 			malloc_error(stack);
 		ft_lstadd_back(stack, tmp);
