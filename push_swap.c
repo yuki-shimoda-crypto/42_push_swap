@@ -37,7 +37,7 @@ static void	input_argv_to_stack(int argc, const char **num, t_stack **stack)
 	{
 		tmp = ft_lstnew(ft_atoi(num[i]));
 		if (!tmp && argc == 2)
-			free_num(num);
+			free_num((void **)num);
 		if (!tmp)
 			malloc_error(stack);
 		ft_lstadd_back(stack, tmp);
@@ -60,6 +60,17 @@ int main(int argc, char const *argv[])
 	input_argv_to_stack(argc, num, &stack_a);
 	if (num != argv)
 		free_num((void **)num);
-	// sort_stack(&stack_a, &stack_b);
+	sort_stack(&stack_a, &stack_b);
+	// while (stack_a->next)
+	// {
+	// 	printf("%d\n", stack_a->num);
+	// 	stack_a = stack_a->next;
+	// }
+	stack_a = ft_lstfirst(stack_a);
+	while (stack_a)
+	{
+		printf("%d\n", stack_a->index);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/20 22:50:21 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:00:00 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef	struct s_stack
 
 t_stack	*ft_lstnew(int num);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
-int	ft_lstsize(t_stack *lst);
+size_t	ft_lstsize(t_stack *lst);
 t_stack	*ft_lstfirst(t_stack *lst);
 t_stack	*ft_lstlast(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
@@ -55,6 +55,9 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 void	error_argv(void);
 void	malloc_error(t_stack **stack);
+void	duplicate_error(t_stack **stack);
 const char	**check_args(int argc, const char **argv);
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
+int		is_sorted(t_stack *stack);
 
 #endif

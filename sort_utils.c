@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 14:42:10 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 00:00:07 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/21 17:02:39 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/21 17:04:03 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-size_t	ft_lstsize(t_stack *lst)
+int	is_sorted(t_stack *stack)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst)
+	while (stack->next)
 	{
-		lst = lst->next;
-		i++;
+		if (stack->index > stack->next->index)
+			return (1);
+		stack = stack->next;
 	}
-	return (i);
+	return (0);
 }
