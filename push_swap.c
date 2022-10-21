@@ -66,11 +66,11 @@ int main(int argc, char const *argv[])
 	// 	printf("%d\n", stack_a->num);
 	// 	stack_a = stack_a->next;
 	// }
-	stack_a = ft_lstfirst(stack_a);
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->index);
-		stack_a = stack_a->next;
-	}
+	// stack_a = ft_lstfirst(stack_a);
+	// while (stack_a)
+	// {
+	// 	printf("%d\n", stack_a->index);
+	// 	stack_a = stack_a->next;
+	// }
 	return (0);
 }

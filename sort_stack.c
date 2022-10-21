@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sotr_stack.c                                       :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 23:15:39 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 14:18:59by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/21 19:35:37by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	five_sort(t_stack **stack_a, t_stack **stack_b)
-{
-
-}
 
 static void	three_sort(t_stack **stack)
 {
@@ -27,6 +22,30 @@ static void	three_sort(t_stack **stack)
 			ra(stack);
 	}
 }
+
+static void	five_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
+{
+	while (ft_lstsize(*stack_a) != 3)
+	{
+		if ((*stack_a)->index < len - 3)
+		{
+			pb(stack_a, stack_b);
+			continue ;
+		}
+		if ((*stack_a)->next->index < len - 3 || (*stack_a)->next->next->index < len - 3)
+			ra(stack_a);
+		else
+			rra(stack_a);
+	}
+	three_sort(stack_a);
+	if (!is_sorted(*stack_b))
+		sb(stack_b);
+	pa(stack_a, stack_b);
+	if (len == 5)
+		pa(stack_a, stack_b);
+	return ;
+}
+
 
 static void	coordinate_compression(t_stack *stack, size_t len)
 {
@@ -87,9 +106,9 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	else if (len == 3)
 		three_sort(stack_a);
 	else if (len <= 5)
-		five_sort(stack_a);
-	// else
-
+		five_sort(stack_a, stack_b, len);
+	else
+		radix_sort(stack_a, stack_b);
 	// printf("%s\n", "variable");
 	// if (len ==)
 		/* code */
