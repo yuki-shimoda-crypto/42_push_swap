@@ -6,13 +6,13 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:16:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/20 22:42:37 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 06:28:55 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int		check_isnum(const char *s)
+static int	check_isnum(const char *s)
 {
 	if (!s)
 		return (1);
@@ -28,7 +28,7 @@ static int		check_isnum(const char *s)
 	return (0);
 }
 
-static int		check_over_int(long num)
+static int	check_over_int(long num)
 {
 	if (num < INT_MIN)
 		return (1);
@@ -47,7 +47,7 @@ static void	scan_num(const char **num, int argc)
 	while (num[i])
 	{
 		if (check_over_int(ft_atol(num[i])) || check_isnum(num[i]))
-			error_argv();
+			error_argv((char **)num, argc);
 		i++;
 	}
 }
@@ -69,26 +69,3 @@ const char	**check_args(int argc, const char **argv)
 	scan_num(argv, argc);
 	return (argv);
 }
-
-// #include <stdio.h>
-
-// int main(int argc, const char *argv[])
-// {
-// 	const char	**num;
-// 	int		i;
-
-// 	num = check_args(argc, argv);
-// 	i = 0;
-// 	while (num[i])
-// 	{
-// 		printf("%s\n", num[i]);
-// 		i++;
-// 	}
-// 	// i = 0;
-// 	// while (argv[i])
-// 	// {
-// 	// 	printf("%s\n", argv[i]);
-// 	// 	i++;
-// 	// }
-// 	return 0;
-// }

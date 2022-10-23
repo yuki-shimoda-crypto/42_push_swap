@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 23:15:39 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 19:35:37by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/24 06:29:28 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/24 06:29:44 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ static void	five_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 {
 	while (ft_lstsize(*stack_a) != 3)
 	{
-		if ((*stack_a)->index < len - 3)
-		{
+		if ((*stack_a)->index < (long)(len - 3))
 			pb(stack_a, stack_b);
-			continue ;
-		}
-		if ((*stack_a)->next->index < len - 3 || (*stack_a)->next->next->index < len - 3)
+		else if ((*stack_a)->next->index < (long)(len - 3) ||
+			(*stack_a)->next->next->index < (long)(len - 3))
 			ra(stack_a);
 		else
 			rra(stack_a);
@@ -40,12 +38,13 @@ static void	five_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 	three_sort(stack_a);
 	if (!is_sorted(*stack_b))
 		sb(stack_b);
-	pa(stack_a, stack_b);
-	if (len == 5)
+	while (len - 3)
+	{
 		pa(stack_a, stack_b);
+		len--;
+	}
 	return ;
 }
-
 
 static void	coordinate_compression(t_stack *stack, size_t len)
 {

@@ -5,12 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 15:14:37 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/19 22:46:14by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/24 06:23:08 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/24 06:24:07 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	free_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	while (stack)
+	{
+		tmp = stack->next;
+		free(stack);
+		stack = tmp;
+	}
+}
 
 static void	free_num(void **num)
 {
@@ -18,10 +30,7 @@ static void	free_num(void **num)
 
 	i = 0;
 	while (num[i])
-	{
-		free(num[i]);
-		i++;
-	}
+		free(num[i++]);
 	free(num);
 }
 
@@ -46,20 +55,19 @@ static void	input_argv_to_stack(int argc, const char **num, t_stack **stack)
 	return ;
 }
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 	const char	**num;
-	
+
 	stack_a = NULL;
 	stack_b = NULL;
 	num = check_args(argc, argv);
-	if (!num)
-		return (1);
 	input_argv_to_stack(argc, num, &stack_a);
 	if (num != argv)
 		free_num((void **)num);
 	sort_stack(&stack_a, &stack_b);
+	free_stack(stack_a);
 	return (0);
 }

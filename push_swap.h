@@ -6,23 +6,21 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 23:54:36 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:16:25 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <limits.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <unistd.h>
-#include "libft/libft.h"
-#include "printf/ft_printf.h"
+# include <limits.h>
+# include <stdlib.h>
+# include <stdint.h>
+# include <unistd.h>
+# include "libft/libft.h"
+# include "printf/ft_printf.h"
 
-#include <stdio.h>
-
-typedef	struct s_stack
+typedef struct s_stack
 {
 	int				num;
 	long			index;
@@ -30,7 +28,7 @@ typedef	struct s_stack
 	struct s_stack	*previous;
 }			t_stack;
 
-t_stack	*ft_lstnew(int num);
+t_stack		*ft_lstnew(int num);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 size_t	ft_lstsize(t_stack *lst);
 t_stack	*ft_lstfirst(t_stack *lst);
@@ -51,9 +49,7 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **lst);
 void	rrb(t_stack **lst);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
-
-
-void	error_argv(void);
+void	error_argv(char **num, int argc);
 void	malloc_error(t_stack **stack);
 void	duplicate_error(t_stack **stack);
 const char	**check_args(int argc, const char **argv);
