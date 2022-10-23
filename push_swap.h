@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 18:00:00 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:54:36 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	duplicate_error(t_stack **stack);
 const char	**check_args(int argc, const char **argv);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 int		is_sorted(t_stack *stack);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len);
 
 #endif

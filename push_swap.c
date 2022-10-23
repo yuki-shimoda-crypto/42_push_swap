@@ -72,5 +72,33 @@ int main(int argc, char const *argv[])
 	// 	printf("%d\n", stack_a->index);
 	// 	stack_a = stack_a->next;
 	// }
+	// while (1)
+	// {
+	// 	if (!stack_a)
+	// 		break ;
+	// 	printf("num\t\t%d\n", stack_a->num);
+	// 	printf("index\t\t%ld\n", stack_a->index);
+	// 	printf("stack_a\t\t%p\n", stack_a);
+	// 	printf("previous\t%p\n", stack_a->previous);
+	// 	printf("next\t\t%p\n", stack_a->next);
+	// 	printf("-------------------\n");
+	// 	if (!(stack_a->next))
+	// 		break ;
+	// 	stack_a = stack_a->next;
+	// }
+	// while (1)
+	// {
+	// 	if (!stack_b)
+	// 		break ;
+	// 	printf("num\t\t%d\n", stack_b->num);
+	// 	printf("index\t\t%ld\n", stack_b->index);
+	// 	printf("stack_b\t\t%p\n", stack_b);
+	// 	printf("previous\t%p\n", stack_b->previous);
+	// 	printf("next\t\t%p\n", stack_b->next);
+	// 	printf("-------------------\n");
+	// 	if (!(stack_b->next))
+	// 		break ;
+	// 	stack_b = stack_b->next;
+	// }
 	return (0);
 }

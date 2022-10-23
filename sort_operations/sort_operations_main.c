@@ -41,31 +41,41 @@
 // // }
 
 // #include <stdio.h>
+// #include "../push_swap.h"
 
 // int main(void)
 // {
-// 	t_stack	*stack_a;
-// 	t_stack	*stack_b;
+// 	t_stack	*stack_a = NULL;
+// 	t_stack	*stack_b = NULL;
+
 
 // 	stack_a = ft_lstnew(0);
-// 	stack_b = ft_lstnew(1);
+// 	// stack_b = ft_lstnew(1);
 // 	stack_a = ft_lstfirst(stack_a);
-// 	stack_b = ft_lstfirst(stack_b);
+// 	// stack_b = ft_lstfirst(stack_b);
 // 	ft_lstadd_back(&stack_a, ft_lstnew(2));
-// 	ft_lstadd_back(&stack_b, ft_lstnew(3));
+// 	// ft_lstadd_back(&stack_b, ft_lstnew(3));
 // 	ft_lstadd_back(&stack_a, ft_lstnew(4));
-// 	ft_lstadd_back(&stack_b, ft_lstnew(5));
-// 	sa(&stack_a);
-// 	sb(&stack_b);
-// 	ss(&stack_a, &stack_b);
-// 	pa(&stack_a, &stack_b);
+// 	// ft_lstadd_back(&stack_b, ft_lstnew(5));
+// 	// sa(&stack_a);
+// 	// sb(&stack_b);
+// 	// ss(&stack_a, &stack_b);
+// 	// pa(&stack_a, &stack_b);
+// 	ft_lstadd_back(&stack_a, ft_lstnew(6));
+// 	ft_lstadd_back(&stack_a, ft_lstnew(8));
+// 	ft_lstadd_back(&stack_a, ft_lstnew(10));
 // 	pb(&stack_a, &stack_b);
-// 	ra(&stack_a);
-// 	rb(&stack_b);
-// 	rr(&stack_a, &stack_b);
-// 	rra(&stack_a);
-// 	rrb(&stack_b);
-// 	rrr(&stack_a, &stack_b);
+// 	pb(&stack_a, &stack_b);
+// 	pb(&stack_a, &stack_b);
+// 	pa(&stack_a, &stack_b);
+// 	pa(&stack_a, &stack_b);
+// 	pa(&stack_a, &stack_b);
+// 	// ra(&stack_a);
+// 	// rb(&stack_b);
+// 	// rr(&stack_a, &stack_b);
+// 	// rra(&stack_a);
+// 	// rrb(&stack_b);
+// 	// rrr(&stack_a, &stack_b);
 // 	while (1)
 // 	{
 // 		if (!stack_a)
