@@ -11,12 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// size_t	stack_max(t_stack *stack)
-// {
-	// size_t	max;
-
-	// max = 
-// }
 
 void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 {
@@ -31,14 +25,10 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 	count = len;
 	base = 2;
 	i = 0;
-	// while (count / base)
 	tmp = *stack_a;
-	// while (count / base)
 	while (i < 32)
 	{
 		j = 0;
-		// printf("a\t%zu\n", base);
-		// *stack_a = ft_lstfirst(tmp);
 		if (!is_sorted(*stack_a))
 			break ;
 		while (j < len)
@@ -53,7 +43,6 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 			pa(stack_a, stack_b);
 		base *= 2;
 		i++;
-		// printf("b\t%zu\n", base);
 	}
 	// *stack_a = ft_lstfirst(tmp);
 
@@ -88,9 +77,3 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 	// }
 	return ;
 }
-// 101
-// 000
-// 001
-// 010
-// 011
-// 100

@@ -109,7 +109,4 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		five_sort(stack_a, stack_b, len);
 	else
 		radix_sort(stack_a, stack_b, len);
-	// printf("%s\n", "variable");
-	// if (len ==)
-		/* code */
 }
