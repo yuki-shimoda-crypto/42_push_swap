@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:42:00 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 17:27:18 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:34:40 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,3 @@ t_stack	*ft_lstnew(int num)
 	new->previous = NULL;
 	return (new);
 }
-
-// #include <stdio.h>
-// #include <limits.h>
-// #include <stdint.h>
-// int main(void)
-// {
-// 	t_stack	*ptr;
-
-// 	ptr = ft_lstnew(1);
-// 	printf("%d\n", ptr->num);
-// 	free(ptr);
-// 	ptr = NULL;
-// 	return (0);
-// }

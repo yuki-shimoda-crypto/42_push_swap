@@ -6,7 +6,7 @@
 #    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 12:25:55 by yshimoda          #+#    #+#              #
-#    Updated: 2022/10/24 19:38:44 by yshimoda         ###   ########.fr        #
+#    Updated: 2022/10/24 20:50:08 by yshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,6 @@ M_SRCS			=	ft_isalpha.c		\
 					ft_putendl_fd.c		\
 					ft_putnbr_fd.c
 
-B_SRCS			=	ft_lstnew.c			\
-					ft_lstadd_front.c	\
-					ft_lstsize.c		\
-					ft_lstlast.c		\
-					ft_lstadd_back.c	\
-					ft_lstdelone.c		\
-					ft_lstclear.c		\
-					ft_lstiter.c		\
-					ft_lstmap.c	
-
 EXTRA_SRCS		=	ft_atol.c			\
 					ft_isspace.c		\
 					ft_strndup.c			
@@ -69,7 +59,7 @@ PRINTF_SRCS		=	ft_printf/ft_printf.c	\
 					ft_printf/ft_put_str.c
 					
 OBJDIR			=	objs
-SRCS			=	$(M_SRCS) $(B_SRCS) $(EXTRA_SRCS) $(PRINTF_SRCS)
+SRCS			=	$(M_SRCS) $(EXTRA_SRCS) $(PRINTF_SRCS)
 OBJS			=	$(SRCS:%.c=$(OBJDIR)/%.o)
 
 all:			$(NAME)
