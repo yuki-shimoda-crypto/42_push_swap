@@ -30,7 +30,7 @@ static void	five_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
 		if ((*stack_a)->index < (long)(len - 3))
 			pb(stack_a, stack_b);
 		else if ((*stack_a)->next->index < (long)(len - 3) ||
-			(*stack_a)->next->next->index < (long)(len - 3))
+					(*stack_a)->next->next->index < (long)(len - 3))
 			ra(stack_a);
 		else
 			rra(stack_a);

@@ -37,5 +37,5 @@ t_stack	*ft_lstnew(int num)
 // 	printf("%d\n", ptr->num);
 // 	free(ptr);
 // 	ptr = NULL;
-// 	return 0;
+// 	return (0);
 // }

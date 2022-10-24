@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 11:14:10 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/14 23:44:46by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/24 10:57:21 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/24 10:57:38 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static size_t	get_size(int n)
 {
-	size_t len;
-	
+	size_t	len;
+
 	len = 0;
 	if (!n)
 		return (1);
@@ -36,9 +36,10 @@ char	*ft_itoa(int n)
 	int		num;
 
 	len = get_size(n);
-	s = malloc(sizeof(int) * (len + 1));
+	s = malloc(sizeof(char) * (len + 1));
 	if (!s)
 		return (NULL);
+	s[len] = '\0';
 	num = n;
 	while (len--)
 	{

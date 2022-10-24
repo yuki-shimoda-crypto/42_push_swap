@@ -20,7 +20,7 @@ static void	swap(t_stack **lst)
 	if (!lst || !*lst || !(*lst)->next)
 		return ;
 	first = *lst;
-	second = (*lst)-> next;
+	second = (*lst)->next;
 	if (second->next)
 		second->next->previous = first;
 	first->previous = second;

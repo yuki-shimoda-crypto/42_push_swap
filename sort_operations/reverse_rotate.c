@@ -15,7 +15,7 @@
 static void	reverse_rotate(t_stack **lst)
 {
 	t_stack	*tmp;
-	
+
 	if (!lst || !*lst || !((*lst)->next))
 		return ;
 	tmp = ft_lstlast(*lst);

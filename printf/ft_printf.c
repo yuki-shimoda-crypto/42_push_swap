@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:42:08 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/20 00:01:57 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 07:32:58 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	ft_proc_per(const char **format, ssize_t *printed, va_list *ap)
 				HEX_LOWER);
 	else if (**format == 'X')
 		*printed += ft_putnbr_base((ssize_t)va_arg(*ap, unsigned int),
-				HEX_UPPER);
+			HEX_UPPER);
 	else if (**format == '%')
 		*printed += write(1, "%", 1);
 	(*format)++;
