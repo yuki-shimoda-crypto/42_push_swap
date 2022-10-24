@@ -6,11 +6,12 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 06:23:08 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 06:24:07 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:28:04 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
 static void	free_stack(t_stack *stack)
 {

@@ -1,50 +1,65 @@
-PUSH_SWAP_SRC		=	push_swap.c			\
-						check_args.c		\
-						error.c				\
-						push_swap.c			\
-						radix_sort.c		\
-						sort_stack.c		\
-						sort_utils.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/24 17:53:02 by yshimoda          #+#    #+#              #
+#    Updated: 2022/10/24 20:29:00 by yshimoda         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-LIST_SRC			=	ft_lstadd_back.c	\
-						ft_lstadd_front.c	\
-						ft_lstclear.c  		\
-						ft_lstdelone.c 		\
-						ft_lstfirst.c  		\
-						ft_lstiter.c   		\
-						ft_lstlast.c   		\
-						ft_lstmap.c    		\
-						ft_lstnew.c    		\
-						ft_lstsize.c   		
+NAME			=	push_swap
+CC				=	cc
+CFLAGS			=	-Wall -Wextra -Werror
+INCLUDE			=	-I include
 
-OPERATION_SRC		=	push.c				\
-						reverse_rotate.c	\
-						rotate.c			\
-						swap.c				
+SORT_SRCS		=	src/push_swap.c			\
+					src/check_args.c		\
+					src/error.c				\
+					src/push_swap.c			\
+					src/radix_sort.c		\
+					src/sort_stack.c		\
+					src/is_sorted.c
 
-PUSH_SWAP_OBJ		=	$(PUSH_SWAP_SRC:.c=.o)
-LIST_OBJ			=	$(LIST_SRC:.c=.o)
-OPERATION_OBJ		=	$(OPERATION_SRC:.c=.o)
+LIST_SRCS		=	src/list/ft_lstadd_back.c	\
+					src/list/ft_lstadd_front.c	\
+					src/list/ft_lstclear.c  	\
+					src/list/ft_lstdelone.c 	\
+					src/list/ft_lstfirst.c 		\
+					src/list/ft_lstiter.c  		\
+					src/list/ft_lstlast.c  		\
+					src/list/ft_lstmap.c   		\
+					src/list/ft_lstnew.c   		\
+					src/list/ft_lstsize.c
 
-CC			=	cc
+OP_SRCS			=	src/op/push.c			\
+					src/op/reverse_rotate.c	\
+					src/op/rotate.c			\
+					src/op/swap.c
 
-CFLAGS		=	-Wall -Wextra -Werror
+SRCS			=	$(SORT_SRCS) $(LIST_SRCS) $(OP_SRCS)
+OBJS			=	$(SRCS:.c=.o)
 
-NAME		=	push_swap
+LIBFTDIR		=	libft
 
 all:		$(NAME)
 
-$(NAME):	$(PUSH_SWAP_OBJ) $(LIST_OBJ) $(OPERATION_OBJ)
-			make -C printf
-			make -C libft
-			$(CC) $(CFLAGS) $(OBJS) printf/libftprintf.a libft/libft.a -o $(NAME)
+$(NAME):	$(OBJS)
+			@make -C $(LIBFTDIR)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFTDIR)/libft.a -o $(NAME)
+
+%.o:%.c
+			$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
 
 clean:		
-			make fclean -C printf
-			make fclean -C libft
-			rm -f $(PUSH_SWAP_OBJ) $(LIST_OBJ) $(OPERATION_OBJ)
+			@$(RM) $(OBJS)
+			@make fclean -C $(LIBFTDIR)
 
 fclean:		clean
-			rm -f $(NAME)
+			@$(RM) $(NAME)
+
+re:			fclean all
 
 .PHONY:		all clean fclean re

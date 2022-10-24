@@ -6,11 +6,12 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:16:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 06:28:55 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 19:16:54 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
 static int	check_isnum(const char *s)
 {
