@@ -6,7 +6,7 @@
 #    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:53:02 by yshimoda          #+#    #+#              #
-#    Updated: 2022/10/24 20:29:00 by yshimoda         ###   ########.fr        #
+#    Updated: 2022/10/24 21:06:56 by yshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ INCLUDE			=	-I include
 SORT_SRCS		=	src/push_swap.c			\
 					src/check_args.c		\
 					src/error.c				\
-					src/push_swap.c			\
 					src/radix_sort.c		\
 					src/sort_stack.c		\
 					src/is_sorted.c
@@ -40,9 +39,10 @@ OP_SRCS			=	src/op/push.c			\
 					src/op/swap.c
 
 SRCS			=	$(SORT_SRCS) $(LIST_SRCS) $(OP_SRCS)
-OBJS			=	$(SRCS:.c=.o)
+OBJS			=	$(SRCS:%.c=$(OBJDIR)/%.o)
 
 LIBFTDIR		=	libft
+OBJDIR			=	objs
 
 all:		$(NAME)
 
@@ -50,11 +50,12 @@ $(NAME):	$(OBJS)
 			@make -C $(LIBFTDIR)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFTDIR)/libft.a -o $(NAME)
 
-%.o:%.c
+$(OBJDIR)/%.o:%.c
+			@mkdir -p $(@D)
 			$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
 
 clean:		
-			@$(RM) $(OBJS)
+			@$(RM) -r $(OBJDIR) a.out
 			@make fclean -C $(LIBFTDIR)
 
 fclean:		clean
