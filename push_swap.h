@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 07:16:25 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:13:01 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct s_stack
 	long			index;
 	struct s_stack	*next;
 	struct s_stack	*previous;
+t_stack		*ft_lstnew(int num);
 }			t_stack;
 
-t_stack		*ft_lstnew(int num);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
 size_t	ft_lstsize(t_stack *lst);
 t_stack	*ft_lstfirst(t_stack *lst);

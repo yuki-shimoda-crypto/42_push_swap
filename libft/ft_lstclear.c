@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 11:14:10 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 10:16:08 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/14 14:41:20 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/14 17:38:07 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	ft_memset(s, 0, n);
+	t_list	*tmp;
+
+	if (!lst || !del || !*lst)
+		return ;
+	while (*lst)
+	{
+		tmp = *lst;
+		(*del)((*lst)->content);
+		free(*lst);
+		*lst = NULL;
+		*lst = tmp->next;
+	}
 }

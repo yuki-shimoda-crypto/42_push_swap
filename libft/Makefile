@@ -1,4 +1,21 @@
-SRCS			=	ft_isalpha.c		\
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/24 12:25:55 by yshimoda          #+#    #+#              #
+#    Updated: 2022/10/24 17:10:08 by yshimoda         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME			=	libft.a
+CC				=	cc
+CFLAGS			=	-Wall -Wextra -Werror
+INCLUDE			=	-I include
+
+M_SRCS			=	ft_isalpha.c		\
 					ft_isdigit.c		\
 					ft_isalnum.c		\
 					ft_isascii.c		\
@@ -31,14 +48,9 @@ SRCS			=	ft_isalpha.c		\
 					ft_putchar_fd.c		\
 					ft_putstr_fd.c		\
 					ft_putendl_fd.c		\
-					ft_putnbr_fd.c		\
-					ft_atol.c
+					ft_putnbr_fd.c
 
-
-					
-OBJS			= $(SRCS:.c=.o)
-
-BONUS			=	ft_lstnew.c			\
+B_SRCS			=	ft_lstnew.c			\
 					ft_lstadd_front.c	\
 					ft_lstsize.c		\
 					ft_lstlast.c		\
@@ -48,30 +60,50 @@ BONUS			=	ft_lstnew.c			\
 					ft_lstiter.c		\
 					ft_lstmap.c	
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+EXTRA_SRCS		=	ft_atol.c			\
+					ft_isspace.c		\
+					ft_strndup.c			
 
-CC				= cc
-
-RM				= rm -f
-
-CFLAGS			= -Wall -Wextra -Werror
-
-NAME			= libft.a
+PRINTF_SRCS		=	ft_printf/ft_printf.c	\
+					ft_printf/ft_put_ptr.c	\
+					ft_printf/ft_put_str.c
+					
+OBJDIR			=	objs
+SRCS			=	$(M_SRCS) $(B_OBJS) $(EXTRA_SRCS) $(PRINTF_SRCS)
+OBJS			=	$(SRCS:%.c=$(OBJDIR)/%.o)
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
+$(OBJDIR)/%.o:%.c
+			@mkdir -p $(@D)
+			$(CC) -c $< -o $@ $(CFLAGS) $(INCLUDE)
+
 clean:			
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				@$(RM) -r $(OBJDIR) a.out
 
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
-re:				fclean $(NAME)
+re:				fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:			all
 
+test:			
+			echo $@
+			echo $(@D)
+			echo $(@F)
+
+test2:
+			echo $<
+			echo $(<D)
+			echo $(<F)
 .PHONY:			all clean fclean re bonus
+
+# ifdef WITH_BONUS
+# 	OBJS += $(B_OBJS)
+# endif
+# bonus:		
+# 				make WITH_BONUS=1
