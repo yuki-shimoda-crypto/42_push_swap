@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 07:26:47 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:29:54 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-# include "libft/libft.h"
-# include "printf/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -49,12 +47,12 @@ void		rr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **lst);
 void		rrb(t_stack **lst);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
+const char	**check_args(int argc, const char **argv);
+void		duplicate_error(t_stack **stack);
 void		error_argv(char **num, int argc);
 void		malloc_error(t_stack **stack);
-void		duplicate_error(t_stack **stack);
-const char	**check_args(int argc, const char **argv);
-void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(t_stack *stack);
 void		radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len);
+void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

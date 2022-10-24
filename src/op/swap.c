@@ -6,11 +6,11 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:32:02 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 07:46:15 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:27:18 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void	swap(t_stack **lst)
 {

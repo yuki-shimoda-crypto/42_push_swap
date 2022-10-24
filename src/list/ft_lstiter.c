@@ -6,11 +6,11 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:41:37 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/16 00:05:26 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:27:18 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	ft_lstiter(t_stack *lst, void (*f)(int))
 {
