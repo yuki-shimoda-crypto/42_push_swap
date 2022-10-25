@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:16:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 19:16:54 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:56:50 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ const char	**check_args(int argc, const char **argv)
 	const char	**num;
 
 	if (argc < 2)
-		exit (1);
+		error_argv(NULL, argc);
 	else if (argc == 2)
 	{
 		num = (const char **)ft_split(argv[1], ' ');

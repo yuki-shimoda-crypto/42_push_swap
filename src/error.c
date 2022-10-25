@@ -6,12 +6,12 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:14:54 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 19:17:43 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:57:56 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf.h"
+#include "libft.h"
 
 void	duplicate_error(t_stack **stack)
 {
@@ -24,7 +24,7 @@ void	duplicate_error(t_stack **stack)
 		*stack = NULL;
 		*stack = tmp;
 	}
-	ft_printf("Error. Duplicate arguments\n");
+	ft_putstr_fd("Error. Duplicate arguments\n", 2);
 	exit(1);
 }
 
@@ -39,7 +39,7 @@ void	error_argv(char **num, int argc)
 			free(num[i++]);
 		free(num);
 	}
-	ft_printf("Error. Argv error.\n");
+	ft_putstr_fd("Error. Argv error.\n", 2);
 	exit(1);
 }
 
@@ -54,6 +54,6 @@ void	malloc_error(t_stack **stack)
 		*stack = NULL;
 		*stack = tmp;
 	}
-	ft_printf("Error. Memory allocation error.\n");
+	ft_putstr_fd("Error. Memory allocation error.\n", 2);
 	exit(1);
 }
