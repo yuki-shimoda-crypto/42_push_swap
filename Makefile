@@ -6,7 +6,7 @@
 #    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:53:02 by yshimoda          #+#    #+#              #
-#    Updated: 2022/10/24 21:12:39 by yshimoda         ###   ########.fr        #
+#    Updated: 2022/10/26 16:47:59 by yshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@make -C $(LIBFTDIR)
-			$(CC) $(CFLAGS) $(OBJS) $(LIBFTDIR)/libft.a -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) -L$(LIBFTDIR) -lft -o $(NAME)
 
 $(OBJDIR)/%.o:%.c
 			@mkdir -p $(@D)
