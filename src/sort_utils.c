@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 06:29:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/26 17:06:28 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/21 17:02:39 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/26 20:47:28 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
+bool	is_sorted(t_stack *stack)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (1)
+	while (stack && stack->next)
 	{
-		if (is_sorted(*stack_a))
-			break ;
-		j = 0;
-		while (j < len)
-		{
-			if (!((*stack_a)->index & ((1) << (i))))
-				pb(stack_a, stack_b);
-			else
-				ra(stack_a);
-			j++;
-		}
-		while (*stack_b)
-			pa(stack_a, stack_b);
-		i++;
+		if (stack->index > stack->next->index)
+			return (false);
+		stack = stack->next;
 	}
-	return ;
+	return (true);
 }

@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   coordinate_compression.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 06:29:59 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/26 17:06:28 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/26 20:28:34 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/26 20:28:54 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len)
+void	coordinate_compression(t_stack *stack)
 {
+	t_stack	*min;
+	t_stack	*tmp;
 	size_t	i;
-	size_t	j;
+	size_t	len;
+	int		max;
 
 	i = 0;
-	while (1)
+	len = ft_lstsize(stack);
+	while (i < len)
 	{
-		if (is_sorted(*stack_a))
-			break ;
-		j = 0;
-		while (j < len)
+		max = INT_MAX;
+		tmp = stack;
+		while (tmp)
 		{
-			if (!((*stack_a)->index & ((1) << (i))))
-				pb(stack_a, stack_b);
-			else
-				ra(stack_a);
-			j++;
+			if (tmp->num <= max && tmp->index == -1)
+			{
+				max = tmp->num;
+				min = tmp;
+			}
+			tmp = tmp->next;
 		}
-		while (*stack_b)
-			pa(stack_a, stack_b);
+		min->index = i;
 		i++;
 	}
-	return ;
 }

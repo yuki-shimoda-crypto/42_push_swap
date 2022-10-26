@@ -6,7 +6,7 @@
 #    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:53:02 by yshimoda          #+#    #+#              #
-#    Updated: 2022/10/26 16:47:59 by yshimoda         ###   ########.fr        #
+#    Updated: 2022/10/26 20:52:00 by yshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,16 @@ CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror
 INCLUDE			=	-I include
 
-SORT_SRCS		=	src/check_args.c		\
-					src/error.c				\
-					src/is_sorted.c			\
-					src/radix_sort.c		\
-					src/push_swap.c			\
-					src/sort_stack.c
+SORT_SRCS		=	src/check_args.c				\
+					src/check_args_utils.c			\
+					src/coordinate_compression.c	\
+					src/error.c						\
+					src/free_func.c					\
+					src/input_to_stack.c			\
+					src/main.c						\
+					src/radix_sort.c				\
+					src/sort_stack.c				\
+					src/sort_utils.c
 
 LIST_SRCS		=	src/list/ft_lstadd_back.c	\
 					src/list/ft_lstadd_front.c	\

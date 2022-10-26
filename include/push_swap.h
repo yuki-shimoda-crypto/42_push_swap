@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/24 19:12:44 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/10/26 20:44:55 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
-# include <stdlib.h>
+# include <stdbool.h>
 # include <stdint.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 typedef struct s_stack
@@ -48,11 +49,15 @@ void		rra(t_stack **lst);
 void		rrb(t_stack **lst);
 void		rrr(t_stack **stack_a, t_stack **stack_b);
 const char	**check_args(int argc, const char **argv);
-void		duplicate_error(t_stack **stack);
-void		error_argv(char **num, int argc);
-void		malloc_error(t_stack **stack);
-int			is_sorted(t_stack *stack);
+void		coordinate_compression(t_stack *stack);
+void		error_argv(char **str, int argc, long *num);
+void		error_malloc(t_stack **stack);
+void		free_str(void **num);
+void		free_stack(t_stack **stack);
+void		input_to_stack(int argc, const char **str, t_stack **stack);
+bool		is_sorted(t_stack *stack);
 void		radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len);
+void		scan_num(const char **str, int argc);
 void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

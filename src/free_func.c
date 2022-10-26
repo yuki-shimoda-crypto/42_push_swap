@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   free_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 17:02:39 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/21 17:04:03 by yshimoda         ###   ########.fr       */
+/*   Created: 2022/10/26 20:47:17 by yshimoda          #+#    #+#             */
+/*   Updated: 2022/10/26 20:48:21 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack *stack)
+void	free_stack(t_stack **stack)
 {
-	while (stack->next)
+	t_stack	*tmp;
+
+	while (stack && *stack)
 	{
-		if (stack->index > stack->next->index)
-			return (1);
-		stack = stack->next;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = NULL;
+		*stack = tmp;
 	}
-	return (0);
+}
+
+void	free_str(void **num)
+{
+	size_t	i;
+
+	i = 0;
+	while (num[i])
+		free(num[i++]);
+	free(num);
 }
