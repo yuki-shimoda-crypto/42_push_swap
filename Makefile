@@ -6,7 +6,7 @@
 #    By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 17:53:02 by yshimoda          #+#    #+#              #
-#    Updated: 2022/10/28 17:39:03 by yshimoda         ###   ########.fr        #
+#    Updated: 2022/11/02 15:44:00 by yshimoda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,7 @@ SORT_SRCS		=	src/check_args.c				\
 					src/main.c						\
 					src/radix_sort.c				\
 					src/sort_stack.c				\
-					src/sort_utils.c				\
-					src/radix_sort_three.c
+					src/sort_utils.c
 
 LIST_SRCS		=	src/list/ft_lstadd_back.c	\
 					src/list/ft_lstadd_front.c	\

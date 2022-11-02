@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 06:29:28 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/28 17:38:06 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:46:29 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	else if (len <= 5)
 		five_sort(stack_a, stack_b, len);
 	else
-		// radix_sort(stack_a, stack_b, len);
-		radix_sort_three(stack_a, stack_b, len);
+		radix_sort(stack_a, stack_b, len);
 }

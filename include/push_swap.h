@@ -6,7 +6,7 @@
 /*   By: yshimoda <yshimoda@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:27 by yshimoda          #+#    #+#             */
-/*   Updated: 2022/10/28 17:41:23 by yshimoda         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:46:15 by yshimoda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-#include <stdio.h>
 
 typedef struct s_stack
 {
@@ -62,5 +60,4 @@ void		radix_sort(t_stack **stack_a, t_stack **stack_b, size_t len);
 void		scan_num(const char **str, int argc);
 void		sort_stack(t_stack **stack_a, t_stack **stack_b);
 
-void	radix_sort_three(t_stack **stack_a, t_stack **stack_b, size_t len);
 #endif
